@@ -5,9 +5,11 @@ import android.content.Context;
 import androidx.room.Database;
 
 import com.example.foodappdesign.dao.UserDAO;
+import com.example.foodappdesign.modal.User;
+import androidx.room.RoomDatabase;
 
-/*@Database(entities = {User.class},version = 1)
-public  abstract  class UserDatabase extends RoomDatabase {
+@Database(entities = {User.class},version = 1)
+public  abstract  class UserDatabase  extends RoomDatabase {
     public static final String DB_NAME="USER.DB";
     public static  UserDatabase instance;
     public static  synchronized UserDatabase getInstance(Context context){
@@ -17,4 +19,4 @@ public  abstract  class UserDatabase extends RoomDatabase {
         return instance;
     }
     public  abstract UserDAO userDAO();
-}*/
+}
