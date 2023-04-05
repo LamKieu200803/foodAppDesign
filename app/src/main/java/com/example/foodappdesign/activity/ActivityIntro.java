@@ -6,9 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.food_app_design.MainActivity;
-import com.example.food_app_design.R;
+import com.example.foodappdesign.MainActivity;
+import com.example.foodappdesign.R;
 
 public class ActivityIntro extends AppCompatActivity {
     @Override

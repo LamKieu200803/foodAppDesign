@@ -12,10 +12,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.food_app_design.R;
-import com.example.food_app_design.adapter.NotifyAdapter;
-import com.example.food_app_design.modal.Notify;
+import com.example.foodappdesign.R;
+import com.example.foodappdesign.adater.NotifyAdapter;
+import com.example.foodappdesign.modal.Notify;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

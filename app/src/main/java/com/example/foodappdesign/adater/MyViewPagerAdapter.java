@@ -5,12 +5,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.food_app_design.fragment.CartFragment;
-import com.example.food_app_design.fragment.ContactFragment;
-import com.example.food_app_design.fragment.FeedBackFragment;
-import com.example.food_app_design.fragment.HistoryFragment;
-import com.example.food_app_design.fragment.HomeFragment;
-
+import com.example.foodappdesign.fragment.CartFragment;
+import com.example.foodappdesign.fragment.ContactFragment;
+import com.example.foodappdesign.fragment.FeedBackFragment;
+import com.example.foodappdesign.fragment.HistoryFragment;
+import com.example.foodappdesign.fragment.HomeFragment;
 
 public class MyViewPagerAdapter extends FragmentStateAdapter {
 

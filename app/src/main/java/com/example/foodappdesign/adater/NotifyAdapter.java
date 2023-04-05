@@ -7,10 +7,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.food_app_design.R;
-import com.example.food_app_design.activity.NotifyActivity;
-import com.example.food_app_design.modal.Notify;
+import com.example.foodappdesign.R;
+import com.example.foodappdesign.activity.NotifyActivity;
+import com.example.foodappdesign.modal.Notify;
 
 import java.util.List;
 

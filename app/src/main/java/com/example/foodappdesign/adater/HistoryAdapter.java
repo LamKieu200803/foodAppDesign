@@ -7,9 +7,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.food_app_design.R;
-import com.example.food_app_design.modal.History;
+import com.example.foodappdesign.R;
+import com.example.foodappdesign.modal.History;
 
 import java.util.List;
 

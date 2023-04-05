@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodappdesign.R;
 import com.example.foodappdesign.modal.Food;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 

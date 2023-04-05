@@ -13,6 +13,12 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.foodappdesign.R;
+import com.example.foodappdesign.modal.Food;
+import com.example.foodappdesign.modal.History;
+import com.example.foodappdesign.modal.Notify;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -43,7 +49,7 @@ public class MuaNgayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mua_ngay);
         Intent intent=getIntent();
         Bundle bundle=intent.getExtras();
-        food=(Food)bundle.getSerializable("food");
+        food=(Food) bundle.getSerializable("food");
         tv_Ten=findViewById(R.id.tv_ten);
         tv_Sdt=findViewById(R.id.tv_sdt);
         edt_Ten=findViewById(R.id.edt_ten);
@@ -111,7 +117,7 @@ public class MuaNgayActivity extends AppCompatActivity {
         time=("" + sdf3.format(date));
         Random random=new Random(1000000000);
         int random_Id=random.nextInt(1000000000);
-        firebaseDatabase_History=FirebaseDatabase.getInstance();
+        firebaseDatabase_History= FirebaseDatabase.getInstance();
         firebaseDatabase_Notify=FirebaseDatabase.getInstance();
         reference_History=firebaseDatabase_History.getReference("list history");
         reference_Notify=firebaseDatabase_Notify.getReference("list notify");

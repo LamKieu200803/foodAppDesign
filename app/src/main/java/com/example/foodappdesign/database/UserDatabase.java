@@ -6,6 +6,8 @@ import androidx.room.Database;
 
 import com.example.foodappdesign.dao.UserDAO;
 import com.example.foodappdesign.modal.User;
+
+import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
 @Database(entities = {User.class},version = 1)
@@ -14,7 +16,7 @@ public  abstract  class UserDatabase  extends RoomDatabase {
     public static  UserDatabase instance;
     public static  synchronized UserDatabase getInstance(Context context){
         if(instance==null){
-            instance=Room.databaseBuilder(context.getApplicationContext(),UserDatabase.class,DB_NAME).allowMainThreadQueries().build();
+            instance= Room.databaseBuilder(context.getApplicationContext(),UserDatabase.class,DB_NAME).allowMainThreadQueries().build();
         }
         return instance;
     }

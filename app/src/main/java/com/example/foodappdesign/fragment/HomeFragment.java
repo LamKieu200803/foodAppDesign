@@ -19,15 +19,14 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.food_app_design.MyApplication;
-import com.example.food_app_design.R;
-import com.example.food_app_design.activity.AccountActivity;
-import com.example.food_app_design.activity.DetailActicity;
-import com.example.food_app_design.activity.NotifyActivity;
-import com.example.food_app_design.adapter.FoodAdapter;
-import com.example.food_app_design.modal.Food;
-import com.example.food_app_design.utils.Utils;
+import com.example.foodappdesign.MyApplication;
+import com.example.foodappdesign.R;
+import com.example.foodappdesign.activity.AccountActivity;
+import com.example.foodappdesign.activity.DetailActicity;
+import com.example.foodappdesign.activity.NotifyActivity;
+import com.example.foodappdesign.adater.FoodAdapter;
+import com.example.foodappdesign.modal.Food;
+import com.example.foodappdesign.utils.Utils;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -211,7 +210,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), NotifyActivity.class));
                 break;
             case R.id.img_account:
-                Intent intent=new Intent(getActivity(),AccountActivity.class);
+                Intent intent=new Intent(getActivity(), AccountActivity.class);
                 startActivity(intent);
                 break;
         }

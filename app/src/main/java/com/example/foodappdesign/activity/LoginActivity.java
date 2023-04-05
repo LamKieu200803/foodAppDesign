@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.foodappdesign.R;
+import com.example.foodappdesign.database.UserDatabase;
 import com.example.foodappdesign.modal.User;
 
 import java.util.List;

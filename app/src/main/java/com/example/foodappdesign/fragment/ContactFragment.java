@@ -13,9 +13,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.food_app_design.R;
-import com.example.food_app_design.adapter.ContactLogoAdapter;
-import com.example.food_app_design.modal.ContactLogo;
+
+import com.example.foodappdesign.R;
+import com.example.foodappdesign.adater.ContactLogoAdapter;
+import com.example.foodappdesign.modal.ContactLogo;
 
 import java.util.ArrayList;
 import java.util.List;
