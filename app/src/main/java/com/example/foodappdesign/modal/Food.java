@@ -1,6 +1,8 @@
 package com.example.foodappdesign.modal;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Food  implements Serializable {
     private int id;
@@ -9,12 +11,11 @@ public class Food  implements Serializable {
     private  String description;
     private int discount;
     private  int price;
-    private  int amountBuy;
-    private  int userId;
-    private int idDelete;
+  private  int amountBuy;
+   private  int userId;
+   private int idDelete;
     public Food() {
     }
-
     public Food(int id, String title, String image, String description, int discount, int price, int amountBuy, int userId, int idDelete) {
         this.id = id;
         this.title = title;
@@ -100,5 +101,20 @@ public class Food  implements Serializable {
     }
     public int total(){
         return  this.price*this.amountBuy;
+    }
+    public Map<String, Object> toMap(){
+        Map<String,Object> values=new HashMap<>();
+        values.put("description", description);
+        values.put("discount", discount);
+        values.put("id", id);
+        values.put("amountBuy", amountBuy);
+        values.put("userId", userId);
+        values.put("idDelete", idDelete);
+        values.put("image", image);
+        values.put("price", price);
+        values.put("title",title);
+
+        return values;
+
     }
 }

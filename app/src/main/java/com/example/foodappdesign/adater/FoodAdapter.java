@@ -4,14 +4,20 @@ import android.graphics.Paint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodappdesign.R;
 import com.example.foodappdesign.modal.Food;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -22,9 +28,12 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
     public IclickDetail clickItem;
     public   interface  IclickDetail{
+        void sua(Food food);
+        void delete(Food food);
         void detailFood(Food food);
     }
     public FoodAdapter(IclickDetail clickItem) {
+
         this.clickItem = clickItem;
     }
     public  void setData(List<Food>foodList){
@@ -59,7 +68,21 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
             holder.tv_Price.setTextSize((int)12);
             holder.tv_Price_Discount.setTextColor(view.getResources().getColor(R.color.no_del));
 
+
         }
+        holder.btnSua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickItem.sua(food);
+            }
+        });
+        holder.btndelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickItem.delete(food);
+            }
+
+            ;});
         holder.img_Food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,14 +92,27 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
     }
 
+    public void delete(Food food) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("list food");
+
+        myRef.child(String.valueOf(food.getId())).removeValue(new DatabaseReference.CompletionListener(){
+            @Override
+            public void onComplete(@Nullable DatabaseError error, @NonNull DatabaseReference ref) {
+                Toast.makeText(view.getContext(), "ffff", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     @Override
     public int getItemCount() {
         if(list!=null)
             return list.size();
         return 0;
     }
+
     public  class FoodViewHolder extends RecyclerView.ViewHolder{
         TextView tv_Title,tv_Price,tv_Discount,tv_Price_Discount;
+        Button btndelete,btnSua;
         ImageView img_Food;
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -85,6 +121,8 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
             img_Food=itemView.findViewById(R.id.img_food);
             tv_Discount=itemView.findViewById(R.id.tv_discount);
             tv_Price_Discount=itemView.findViewById(R.id.tv_price_discount);
+            btndelete=view.findViewById(R.id.btnXoa);
+            btnSua=view.findViewById(R.id.btnSua);
         }
     }
 }

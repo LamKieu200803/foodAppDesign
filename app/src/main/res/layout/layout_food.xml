@@ -54,6 +54,17 @@
         android:textStyle="bold"
         android:layout_height="wrap_content"
         android:id="@+id/tv_price_root"/>
+    <Button
+        android:id="@+id/btnSua"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:hint="Sua"/>
+    <Button
+        android:id="@+id/btnXoa"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="Xoa"/>
     <TextView
         android:layout_marginBottom="8dp"
         android:layout_width="match_parent"

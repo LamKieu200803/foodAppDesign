@@ -3,6 +3,7 @@ package com.example.foodappdesign.activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,18 +13,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.foodappdesign.R;
 import com.example.foodappdesign.database.UserDatabase;
+import com.example.foodappdesign.fragment.HomeFragment;
+import com.example.foodappdesign.modal.Food;
 import com.example.foodappdesign.modal.User;
 
 import java.util.List;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
     EditText edt_Email,edt_PassWord;
+    HomeFragment homeFragment;
     ImageView img_Show_Hide;
     String email,passWord;
     TextView tv_Dang_Nhap;
     ImageView img_Back;
     List<User> list;
     int count=0;
+    Button btnThem,btnSua,btnXoa;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     @Override
@@ -37,17 +42,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View view) {
                 getData();
-                if(list.isEmpty()){
-                    Toast.makeText(LoginActivity.this,"Đăng Nhập Thất Bại",Toast.LENGTH_LONG).show();
+                if(passWord.length()==0||email.length()==0){
+                    Toast.makeText(LoginActivity.this,"Vui Lòng Nhập Đầy Đủ Thông Tin",Toast.LENGTH_LONG).show();
                     return;
                 }
                 for(int i=0;i<list.size();i++){
-                    if(list.get(i).getEmail().equals(email)&&list.get(i).getPassWord().equals(passWord)){
+                    if(passWord.equals("123")&& email.equals("admin")){
                         Toast.makeText(LoginActivity.this,"Đăng Nhập Thành Công",Toast.LENGTH_LONG).show();
                         editor.putString("email",email);
                         editor.putString("password",passWord);
                         editor.putBoolean("login",true);
-                        editor.putInt("userId",list.get(i).getId());
+                       // editor.putInt("userId",list.get(i).getId());
                         editor.apply();
                         finish();
                         return;
@@ -62,6 +67,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }
             }
         });
+
         img_Back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +81,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         img_Show_Hide=findViewById(R.id.img_show_hide);
         tv_Dang_Nhap=findViewById(R.id.tv_dang_nhap);
         img_Back=findViewById(R.id.img_back);
+
     }
     @Override
     public void onClick(View view) {

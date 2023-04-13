@@ -80,17 +80,11 @@ public class DetailActicity extends AppCompatActivity  {
         tv_Mua_Ngay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isLogin){
                     Intent muaNgay=new Intent(DetailActicity.this,MuaNgayActivity.class);
                     Bundle bundle_MuaNgay=new Bundle();
                     bundle_MuaNgay.putSerializable("food",food);
                     muaNgay.putExtras(bundle_MuaNgay);
                     startActivity(muaNgay);
-                }else {
-                    Toast.makeText(getApplicationContext(),"Bạn Cần Phải Đăng Nhập",Toast.LENGTH_LONG).show();
-                    return;
-                }
-
 
             }
         });
@@ -200,7 +194,7 @@ public class DetailActicity extends AppCompatActivity  {
             tv_Them_Vao_Gio_Hang_Sheet.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(isLogin){
+
                         idUser=sharedPreferences2.getInt("userId",0);
                         amount_List_Cart++;
                         idDelete++;
@@ -217,10 +211,7 @@ public class DetailActicity extends AppCompatActivity  {
                         reference.child(amount_List_Cart+"").setValue(food);
                         Toast.makeText(DetailActicity.this, "Thêm Thành Công !!!", Toast.LENGTH_SHORT).show();
                         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                    }   else {
-                        Toast.makeText(DetailActicity.this, "Bạn Cần Phải Đăng Nhập", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
+
                 }
             });
             tv_Huy_Bo.setOnClickListener(new View.OnClickListener() {

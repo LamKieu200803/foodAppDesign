@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ public class AccountActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     String email,passWord;
+    Button btnSua,btnThem,btnXoa;
     ImageView img_Back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,9 @@ public class AccountActivity extends AppCompatActivity {
         unitUi();
     }
     private void unitUi(){
+        btnSua=findViewById(R.id.butSua);
+        btnThem=findViewById(R.id.butThem);
+        btnXoa=findViewById(R.id.btnXoa);
         tv_Email=findViewById(R.id.tv_email);
         tv_Mat_Khau=findViewById(R.id.tv_mat_khau);
         tv_Dang_Ky=findViewById(R.id.tv_dang_ky);
